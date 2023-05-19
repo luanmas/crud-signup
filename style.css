@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(72, 72, 206);
+}
+
+.container-cadaster {
+    position: relative;
+    background-color: #fff;
+    border-radius: 5px;
+    height: 500px;
+    width: 400px;
+    padding: 10px;
+}
+
+.container-cadaster .form-cadaster {
+    width: 80%;
+    padding: 60px 0 0 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* CSS Icons Font Awesome */
+
+i.fa-sharp {
+    top: -50px;
+    left:40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    background-color: #fff;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    
+}
+
+.fa-sharp {
+    padding: 50px;
+    border-radius: 50%;
+}
+
+i.fa-xmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+    background-color: #ccca;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #747474;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* CSS Icons Font Awesome */
+
+.btn-number {
+    position: relative;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(69, 69, 252);
+    
+    border: none;
+    padding: 20px 8px;
+    margin-bottom: 15px;
+
+}
+
+/* btn connect with phone number */
+
+.btn-number span {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+}
+
+/* btn connect with phone number */
+
+
+/* types account */
+
+.type-login {
+    display: flex;
+    justify-content: space-between;
+}
+
+.type-login button {
+    width: 145px;
+    padding: 10px 0;
+    background-color: #fff;
+    margin-bottom: 10px;
+
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.type-login #btn-create {
+    background-color: #747474;
+    color: #fafafa;
+}
+
+.type-login #btn-login {
+    border: 1px solid #747474;
+    color: #494949;
+}
+
+/* types account */
+
+
+/* Forms & Inputs*/
+    .form-cadaster form {
+        margin-top: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px 5px;
+        margin-top:3px;
+        margin-bottom: 10px;
+        outline: none;
+    }
+
+
+    .form-cadaster form label {
+        text-transform: uppercase;
+        font-size: 12px;
+        font-weight: bold;
+        color: #2e2e2e;
+    }
+
+    input[type="submit"] {
+        width: 100%;
+        margin-top: 10px;
+        border-radius: 5px;
+        padding: 10px 5px;
+        border: none;
+        outline: none;
+        background-color: rgb(42, 226, 42);
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+
+
+/* Inputs Text */
