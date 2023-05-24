@@ -11,11 +11,13 @@ form.addEventListener("submit" , async (e) => {
 
     if(validadeConfirmPassword(inputConfirmPassword , inputPassword)) {
         submitForm(email , password);
+    }else {
+        console.log("ERROR!");
     }
 })
 
 
-const validadeEmail = async (input) => {
+const validadeEmail = (input) => {
     let emailWithOutSpace = deleteWhiteSpace(input.value); 
 
     if(emailWithOutSpace === "") {
@@ -40,7 +42,7 @@ const checkEmail = (email) => {
         );
 }
 
-const validadePassword = async (input) => {
+const validadePassword = (input) => {
 
     let passwordWithOutSpace = deleteWhiteSpace(input.value);
 
@@ -62,7 +64,7 @@ const validadePassword = async (input) => {
     // Verificar se a sneha tem algum caratere maiusculo , minusculo , números e um caractere especial
 }
 
-const validadeConfirmPassword = async (inputPasswordConfirm, inputPassword) => {
+const validadeConfirmPassword = (inputPasswordConfirm, inputPassword) => {
 
     let passwordConfirmWithOutSpace = deleteWhiteSpace(inputPasswordConfirm.value);
     let passwordWithOutSpace = deleteWhiteSpace(inputPassword.value);
@@ -95,8 +97,8 @@ const deleteWhiteSpace = (word) => {
 }
 
 const submitForm = async (email , password) => {
-    let account = {email , password};
-
+    const account = { email , password };
+    
     const options = {
         method:"POST",
         headers: new Headers({'content-type' : 'application/json'}),
@@ -107,6 +109,7 @@ const submitForm = async (email , password) => {
     .then(() => {
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
+        document.getElementById("confirm-password").value = "";
     })
 }
 

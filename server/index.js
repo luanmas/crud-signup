@@ -3,7 +3,13 @@ const PORT = 3030;
 const app = express();
 const path = require("path");
 const apiRoute = require("./routes/api");
+const connectDB = require("./db");
+const cors = require("cors");
 
+connectDB();
+
+app.use(cors());
+// estudar esse cors e o cookie parser
 app.use("/api" , apiRoute);
 app.use(express.static(path.join(__dirname , "public")));
 

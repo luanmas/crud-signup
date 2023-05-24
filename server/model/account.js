@@ -1,27 +1,10 @@
-module.exports = {
-    accounts : [
-        {
-            email : "luan123@gmail.com",
-            password : "1234567",
-        },
-        {
-            email : "vitor123@gmail.com",
-            password : "3333333",
-        },
-        {
-            email : "pedro123@gmail.com",
-            password : "4444444",
-        }
-    ],
+const mongoose = require("mongoose");
 
-    getAll() {
-        console.log(this.accounts);
-        return this.accounts;
-    },
+const DataSchema = new mongoose.Schema({
+    email:String,
+    password:String
+})
 
-    registerAccount(form) {
-        this.accounts.push(form);
-        console.log(this.accounts);
-        return this.accounts;
-    }
-}
+const account = mongoose.model("account" , DataSchema);
+
+module.exports = account;
