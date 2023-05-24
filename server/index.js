@@ -10,7 +10,7 @@ connectDB();
 
 app.use(cors());
 // estudar esse cors e o cookie parser
-app.use("/api" , apiRoute);
+app.use("/api" , express.json() , apiRoute);
 app.use(express.static(path.join(__dirname , "public")));
 
 app.listen(PORT , () => {

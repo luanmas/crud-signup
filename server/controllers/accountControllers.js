@@ -22,7 +22,8 @@ module.exports = {
     },
 
     async registerAccount(req , res) {
-        const { email , password } = req.body;
+        let email = req.body.email;
+        let password = req.body.password;
 
         let dataCreate = {
             email , password

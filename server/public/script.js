@@ -97,15 +97,14 @@ const deleteWhiteSpace = (word) => {
 }
 
 const submitForm = async (email , password) => {
-    const account = { email , password };
-    
+
     const options = {
         method:"POST",
         headers: new Headers({'content-type' : 'application/json'}),
-        body: JSON.stringify(account)
+        body: JSON.stringify({email , password})
     }
 
-    await fetch("http://localhost:3030/api/register" , options)
+    await fetch("http://localhost:3030/api/register/" , options)
     .then(() => {
         document.getElementById("email").value = "";
         document.getElementById("password").value = "";
