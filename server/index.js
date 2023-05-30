@@ -12,6 +12,7 @@ app.use(cors());
 // estudar esse cors e o cookie parser
 app.use("/api" , express.json() , apiRoute);
 app.use(express.static(path.join(__dirname , "public")));
+app.use("/admin" , express.static(path.join(__dirname , "admin")));
 
 app.listen(PORT , () => {
     console.log("Server is running on port " + PORT);

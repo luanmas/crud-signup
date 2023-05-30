@@ -24,12 +24,14 @@ module.exports = {
     async registerAccount(req , res) {
         let email = req.body.email;
         let password = req.body.password;
+        let dataCreate;
 
-        let dataCreate = {
+        dataCreate = {
             email , password
         }
 
         const account = await Account.create(dataCreate);
+        console.log(dataCreate);
         res.json(account);
     },
 
