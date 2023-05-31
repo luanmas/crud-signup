@@ -1,20 +1,6 @@
 const Account = require("../model/account");
 
 module.exports = {
-    // accounts : [
-    //     {
-    //         email : "luan123@gmail.com",
-    //         password : "1234567",
-    //     },
-    //     {
-    //         email : "vitor123@gmail.com",
-    //         password : "3333333",
-    //     },
-    //     {
-    //         email : "pedro123@gmail.com",
-    //         password : "4444444",
-    //     }
-    // ],
 
     async getAll(req , res) {
         const accounts = await Account.find();
@@ -34,6 +20,13 @@ module.exports = {
         console.log(dataCreate);
         res.json(account);
     },
+
+    async getUserAccount(req , res) {
+        let email = req.body.email;
+
+        const account = await Account.findOne({email : email});
+        res.json(account);
+    }
 
     // async deleteAccount(email , password) {
     //     for (let i = 0; i < this.accounts.length ; i++) {

@@ -12,8 +12,6 @@ form.addEventListener("submit" , async (e) => {
         if(validadeConfirmPassword(inputConfirmPassword , inputPassword)){
             if(email == undefined || '' || password == undefined || '') {
                 console.log("Senha ou email invalidos!");
-                console.log("Senha : " + password);
-                console.log("Email : " + email);
             }else {
                 submitForm(email , password);
             }

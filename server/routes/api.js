@@ -11,6 +11,7 @@ router.use(cors(options));
 
 router.get("/all" , accounts.getAll);
 router.post("/register" , accounts.registerAccount);
+router.post("/searchUser" , accounts.getUserAccount);
 
 // router.post("/register" , express.json() , (req , res) => {
 //     let email = req.body.email;
