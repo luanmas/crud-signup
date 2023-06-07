@@ -32,6 +32,7 @@ const listAccount =  (account) => {
         <div class="account">
             <h3>Email : ${account.email}</h3>
             <h3>Password : ${password}</h3>
+            <h3>ID : ${account.id}</h3>
         </div>
     `
 }

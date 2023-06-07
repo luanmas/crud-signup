@@ -5,15 +5,18 @@ form.addEventListener("submit" , async (e) => {
     const inputEmail = document.getElementById("email");
     const inputPassword = document.getElementById("password");
     const inputConfirmPassword = document.getElementById("confirm-password");
+    // const inputFirstName = document.getElementById("first-name");
+    // const inputSecondName = document.getElementById("second-name");
 
     try {
+        // let name = await validateName(inputFirstName , inputSecondName);
         let email = await validadeEmail(inputEmail);
         let password = await validadePassword(inputPassword);
         if(validadeConfirmPassword(inputConfirmPassword , inputPassword)){
             if(email == undefined || '' || password == undefined || '') {
-                console.log("Senha ou email invalidos!");
+                console.log("Nome , Senha ou email invalidos!");
             }else {
-                submitForm(email , password);
+                submitForm(name , email , password);
             }
         }
     } catch (error) {
@@ -21,6 +24,22 @@ form.addEventListener("submit" , async (e) => {
     }
 })
 
+// const validateName = async (firstName , secondName) => {
+//     try{
+//         if(firstName.value == undefined || "")  {
+//             console.log("Primeiro nome incompleto");
+//         }
+    
+//         if(secondName.value == undefined || "") {
+//             console.log("Segundo nome incompleto");
+//         }else{
+//             const name = `${firstName.value} ${secondName.value}`;
+//             return name;
+//         }
+//     }catch {
+//         console.log("ERROR " + error);
+//     }
+// }
 
 const validadeEmail = (input) => {
     let emailWithOutSpace = deleteWhiteSpace(input.value); 
@@ -106,8 +125,9 @@ const deleteWhiteSpace = (word) => {
     return validatedWord;
 }
 
-const submitForm = async (email , password) => {
-    let form = {email , password};
+const submitForm = async (name , email , password) => {
+
+    let form = {name , email , password};
 
     const options = {
         method:"POST",
@@ -121,9 +141,11 @@ const submitForm = async (email , password) => {
             document.getElementById("email").value = "";
             document.getElementById("password").value = "";
             document.getElementById("confirm-password").value = "";
+            document.getElementById("first-name").value = "";
+            document.getElementById("second-name").value = "";
         })
     } catch (error) {
-        console.log("ERROR " + error);
+        console.log("ERROR : " + error);
     }
 }
 
@@ -133,4 +155,4 @@ const submitForm = async (email , password) => {
 
 // - Retornar um email default para o proprietário desse email e dizer que o cadastro foi feito com sucesso
 // - Conectar um backend com um banco de daods e armazenar esse login
-// - verificação se o login ja existe e dizer que o usuario já tem uma conta
+// - verificação se o login ja existe pelo email e dizer que o usuario já tem uma conta

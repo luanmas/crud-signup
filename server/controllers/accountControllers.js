@@ -8,11 +8,11 @@ module.exports = {
     },
 
     async registerAccount(req , res) {
-        let email = req.body.email;
-        let password = req.body.password;
-        let dataCreate;
+        const email = req.body.email;
+        const password = req.body.password;
+        
 
-        dataCreate = {
+        const dataCreate = {
             email , password
         }
 
